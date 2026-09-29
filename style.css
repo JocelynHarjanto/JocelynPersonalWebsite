@@ -1814,3 +1814,674 @@ html::-webkit-scrollbar {
     }
 }
 
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =========================
+       BASIC MOBILE SETUP
+       ========================= */
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    body {
+        background-size: 25px 25px;
+    }
+
+    .website {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        zoom: 1;
+    }
+
+
+    /* =========================
+       BANNER
+       ========================= */
+
+    .banner {
+        width: calc(100% - 24px);
+        height: 120px;
+        margin: 12px auto 0;
+    }
+
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .main-nav {
+        width: calc(100% - 24px);
+        height: auto;
+        min-height: 0;
+
+        margin: 12px auto 0;
+
+        padding: 10px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-buttons {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .nav-buttons a {
+        min-width: 0;
+        width: calc(50% - 4px);
+        height: 45px;
+
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       GENERAL PAGE SETTINGS
+       ========================= */
+
+    .home-frame,
+    .about-frame,
+    .skills-page,
+    .project-page {
+
+        width: calc(100% - 24px);
+
+        margin: 0 auto;
+
+        top: 20px;
+
+        border-width: 3px;
+    }
+
+
+    /* =====================================================
+       HOME
+       ===================================================== */
+
+    .home-frame {
+
+        height: auto;
+        min-height: 0;
+
+        padding: 0 10px 35px;
+    }
+
+    .home-heading {
+
+        width: 90%;
+        height: 65px;
+
+        margin: 30px auto 25px;
+
+        font-size: 20px;
+
+        text-align: center;
+    }
+
+    .home-closed-message {
+
+        top: 180px;
+
+        font-size: 15px;
+        line-height: 1.7;
+        letter-spacing: 1px;
+
+        padding: 0 15px;
+    }
+
+
+    /* =========================
+       HOME WINDOWS
+       ========================= */
+
+    .profile-window,
+    .links-window {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        height: auto;
+
+        margin: 0 auto 25px;
+    }
+
+    .window-title {
+
+        height: 50px;
+
+        padding: 0 12px;
+
+        font-size: 17px;
+    }
+
+    .window-controls {
+        gap: 6px;
+    }
+
+    .window-controls span {
+
+        width: 28px;
+        height: 28px;
+
+        font-size: 17px;
+    }
+
+
+    /* =========================
+       PROFILE
+       ========================= */
+
+    .window-content {
+        padding: 20px 15px 25px;
+    }
+
+    .photo-box {
+
+        width: 100%;
+        max-width: 280px;
+
+        height: auto;
+        aspect-ratio: 1 / 0.94;
+
+        margin: 0 auto;
+    }
+
+    .self-photo {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .name {
+
+        margin-top: 25px;
+
+        font-size: 16px;
+
+        white-space: normal;
+        width: 100%;
+
+        animation: none;
+
+        border-right: none;
+    }
+
+
+    /* =========================
+       LINKS
+       ========================= */
+
+    .links-content {
+
+        padding: 20px 15px;
+    }
+
+    .links-content a {
+
+        width: 100%;
+        min-height: 52px;
+        height: auto;
+
+        margin-bottom: 15px;
+
+        padding: 8px 10px;
+
+        gap: 10px;
+
+        font-size: 9px;
+
+        overflow: hidden;
+    }
+
+    .links-content a span {
+
+        min-width: 0;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+
+        line-height: 1.2;
+    }
+
+    .link-icon {
+
+        width: 34px;
+        height: 34px;
+
+        flex: 0 0 34px;
+
+        margin-left: 0;
+    }
+
+
+    /* =====================================================
+       ABOUT
+       ===================================================== */
+
+    .about-frame {
+
+        height: auto;
+
+        min-height: 0;
+
+        padding: 30px 10px 35px;
+    }
+
+    .about-heading {
+
+        width: 150px;
+        height: 65px;
+
+        font-size: 27px;
+    }
+
+    .about-closed-message {
+
+        top: 180px;
+
+        font-size: 15px;
+        line-height: 1.7;
+
+        padding: 0 15px;
+    }
+
+    .about-window {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        height: auto;
+
+        margin-top: 25px;
+    }
+
+    .about-text {
+
+        padding: 25px 18px;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        text-align: left;
+    }
+
+    .about-text p {
+
+        margin-bottom: 20px;
+
+        line-height: 1.5;
+
+        text-indent: 1em;
+    }
+
+
+    /* =====================================================
+       SKILLS
+       ===================================================== */
+
+    .skills-page {
+
+        height: auto;
+
+        min-height: 0;
+
+        padding: 30px 10px 40px;
+    }
+
+    .skills-page .skills-heading {
+
+        width: 160px;
+        height: 65px;
+
+        margin: 0 auto;
+
+        font-size: 27px;
+    }
+
+    .additional-skills-heading {
+
+        width: 90%;
+        height: 65px;
+
+        margin: 35px auto 0;
+
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .skills-page .technical-heading {
+
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
+
+        width: 90%;
+        height: 65px;
+
+        margin: 35px auto 0;
+
+        font-size: 20px;
+        text-align: center;
+    }
+
+
+    /* =========================
+       SKILL WINDOWS
+       ========================= */
+
+    .skills-page .skills-window,
+    .skills-page .additional-skills-window,
+    .skills-page .technical-tools-window {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        height: auto;
+
+        margin: 20px auto 0;
+    }
+
+
+    /* =========================
+       SKILL ITEMS
+       ========================= */
+
+    .skills-page .skill-list {
+
+        width: 100%;
+
+        padding: 20px 12px;
+
+        gap: 10px;
+    }
+
+    .skills-page .skill-item {
+
+        width: 100%;
+        min-height: 45px;
+
+        padding: 8px 10px;
+
+        font-size: 13px;
+
+        white-space: normal;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       TECHNICAL TOOLS
+       ========================= */
+
+    .skills-page .tool-list {
+
+        padding: 20px 10px;
+
+        gap: 10px;
+    }
+
+    .skills-page .tool-item {
+
+        width: 100%;
+        min-width: 0;
+
+        height: 55px;
+
+        padding: 7px 10px;
+
+        gap: 10px;
+
+        justify-content: flex-start;
+
+        font-size: 13px;
+    }
+
+    .skills-page .skill-icon {
+
+        width: 35px;
+        height: 35px;
+
+        flex: 0 0 35px;
+    }
+
+
+    /* =========================
+       SKILLS CLOSED MESSAGES
+       ========================= */
+
+    .skills-page .skills-closed-message,
+    .skills-page .additional-closed-message,
+    .skills-page .technical-closed-message {
+
+        position: absolute;
+
+        left: 0;
+        right: 0;
+
+        padding: 0 10px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+        letter-spacing: 1px;
+    }
+
+    .skills-page .skills-closed-message {
+        top: 160px;
+    }
+
+    .skills-page .additional-closed-message {
+        top: 430px;
+    }
+
+    .skills-page .technical-closed-message {
+        top: 700px;
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+       ===================================================== */
+
+    .project-page {
+
+        height: auto;
+
+        min-height: 0;
+
+        padding: 30px 10px 50px;
+    }
+
+    .project-heading {
+
+        width: 180px;
+        height: 65px;
+
+        font-size: 25px;
+    }
+
+    .project-closed-message {
+
+        top: 180px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        padding: 0 15px;
+    }
+
+
+    /* =========================
+       PROJECT ROWS
+       ========================= */
+
+    .project-row {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        height: auto;
+
+        margin: 25px auto 45px;
+    }
+
+    .hybrid-rush,
+    .ecoranger,
+    .gridmancer,
+    .mindscape {
+
+        left: auto;
+        top: auto;
+    }
+
+
+    /* =========================
+       PROJECT WINDOWS
+       ========================= */
+
+    .project-description-window,
+    .project-showcase-window {
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        height: auto;
+
+        margin: 0 0 15px;
+    }
+
+    .project-page .window-title {
+
+        height: 50px;
+
+        padding: 0 10px;
+
+        font-size: 15px;
+    }
+
+    .project-page .window-controls {
+
+        gap: 5px;
+    }
+
+    .project-page .window-controls span,
+    .project-page .project-close-window {
+
+        width: 27px;
+        height: 27px;
+
+        font-size: 17px;
+    }
+
+
+    /* =========================
+       PROJECT DESCRIPTION
+       ========================= */
+
+    .project-description {
+
+        padding: 20px 15px;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        text-align: left;
+    }
+
+    .project-description strong {
+
+        margin-bottom: 10px;
+
+        font-size: 17px;
+    }
+
+    .project-description p {
+
+        margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       PROJECT SHOWCASE
+       ========================= */
+
+    .project-showcase {
+
+        padding: 20px 12px 25px;
+    }
+
+    .gif-placeholder {
+
+        width: 100%;
+        max-width: 265px;
+
+        height: auto;
+
+        aspect-ratio: 265 / 155;
+    }
+
+    .gif-placeholder .GIF {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .project-link {
+
+        max-width: 100%;
+
+        margin: 20px auto 0;
+
+        font-size: 15px;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+    }
+
+}
