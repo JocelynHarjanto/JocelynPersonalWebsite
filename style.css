@@ -2747,3 +2747,333 @@ html::-webkit-scrollbar {
     }
 
 }
+
+/* =========================================================
+   MOBILE FIX - PAGE CANVAS & DECORATIONS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       SKILLS PAGE
+       Keep a fixed mobile canvas even when windows are closed
+       ===================================================== */
+
+    .skills-page {
+        position: relative !important;
+
+        width: calc(100% - 20px) !important;
+        height: 1550px !important;
+
+        min-height: 1550px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* Keep headings in predictable positions */
+
+    .skills-page .skills-heading {
+        position: absolute !important;
+
+        top: 30px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        margin: 0 !important;
+    }
+
+    .skills-page .additional-skills-heading {
+        position: absolute !important;
+
+        top: 480px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        margin: 0 !important;
+    }
+
+    .skills-page .technical-heading {
+        position: absolute !important;
+
+        top: 930px !important;
+        left: 50% !important;
+        right: auto !important;
+
+        transform: translateX(-50%) !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* =====================================================
+       SKILLS WINDOWS
+       ===================================================== */
+
+    .skills-page .skills-window {
+        position: absolute !important;
+
+        top: 125px !important;
+        left: 10px !important;
+
+        width: calc(100% - 20px) !important;
+        height: 280px !important;
+
+        margin: 0 !important;
+    }
+
+    .skills-page .additional-skills-window {
+        position: absolute !important;
+
+        top: 575px !important;
+        left: 10px !important;
+
+        width: calc(100% - 20px) !important;
+        height: 280px !important;
+
+        margin: 0 !important;
+    }
+
+    .skills-page .technical-tools-window {
+        position: absolute !important;
+
+        top: 1025px !important;
+        left: 10px !important;
+
+        width: calc(100% - 20px) !important;
+        height: 350px !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* =====================================================
+       SKILLS CLOSED MESSAGES
+       ===================================================== */
+
+    .skills-page .skills-closed-message {
+        position: absolute !important;
+
+        top: 205px !important;
+
+        left: 10px !important;
+        right: 10px !important;
+
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+
+        text-align: center !important;
+    }
+
+    .skills-page .additional-closed-message {
+        position: absolute !important;
+
+        top: 655px !important;
+
+        left: 10px !important;
+        right: 10px !important;
+
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+
+        text-align: center !important;
+    }
+
+    .skills-page .technical-closed-message {
+        position: absolute !important;
+
+        top: 1105px !important;
+
+        left: 10px !important;
+        right: 10px !important;
+
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+
+        text-align: center !important;
+    }
+
+
+    /* =====================================================
+       SKILLS DIAMONDS
+       ===================================================== */
+
+    .skills-page .diamond-pattern {
+        position: absolute !important;
+
+        left: 15px !important;
+        right: 15px !important;
+
+        bottom: 25px !important;
+
+        height: 80px !important;
+
+        gap: 14px !important;
+
+        overflow: hidden !important;
+    }
+
+    .skills-page .diamond-pattern span {
+        font-size: 25px !important;
+    }
+
+    .skills-page .diamond-pattern span:nth-child(even) {
+        font-size: 17px !important;
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+       ===================================================== */
+
+    .project-page {
+        position: relative !important;
+
+        width: calc(100% - 20px) !important;
+
+        height: 2100px !important;
+        min-height: 2100px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        padding: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       PROJECT HEADING
+       ===================================================== */
+
+    .project-page .project-heading {
+        position: absolute !important;
+
+        top: 30px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        margin: 0 !important;
+
+        width: 180px !important;
+        height: 65px !important;
+
+        font-size: 24px !important;
+    }
+
+
+    /* =====================================================
+       PROJECT CLOSED MESSAGE
+       ===================================================== */
+
+    .project-page .project-closed-message {
+        position: absolute !important;
+
+        top: 140px !important;
+
+        left: 10px !important;
+        right: 10px !important;
+
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+
+        text-align: center !important;
+    }
+
+
+    /* =====================================================
+       PROJECT ROWS
+       ===================================================== */
+
+    .project-page .project-row {
+        position: absolute !important;
+
+        left: 10px !important;
+
+        width: calc(100% - 20px) !important;
+
+        height: 400px !important;
+
+        margin: 0 !important;
+    }
+
+    .project-page .hybrid-rush {
+        top: 250px !important;
+    }
+
+    .project-page .ecoranger {
+        top: 700px !important;
+    }
+
+    .project-page .gridmancer {
+        top: 1150px !important;
+    }
+
+    .project-page .mindscape {
+        top: 1600px !important;
+    }
+
+
+    /* =====================================================
+       PROJECT WINDOWS
+       ===================================================== */
+
+    .project-page .project-description-window,
+    .project-page .project-showcase-window {
+
+        position: relative !important;
+
+        left: auto !important;
+        top: auto !important;
+
+        width: 100% !important;
+
+        margin: 0 0 12px !important;
+    }
+
+
+    .project-page .project-description-window {
+        height: 235px !important;
+    }
+
+    .project-page .project-showcase-window {
+        height: 150px !important;
+    }
+
+
+    /* =====================================================
+       PROJECT DIAMONDS
+       ===================================================== */
+
+    .project-page .diamond-pattern {
+        position: absolute !important;
+
+        left: 15px !important;
+        right: 15px !important;
+
+        bottom: 25px !important;
+
+        width: auto !important;
+        height: 80px !important;
+
+        gap: 14px !important;
+
+        overflow: hidden !important;
+    }
+
+    .project-page .diamond-pattern span {
+        font-size: 25px !important;
+    }
+
+    .project-page .diamond-pattern span:nth-child(even) {
+        font-size: 17px !important;
+    }
+
+}
