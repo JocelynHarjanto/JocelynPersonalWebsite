@@ -1820,9 +1820,9 @@ html::-webkit-scrollbar {
 
 @media (max-width: 700px) {
 
-    /* =========================
-       BASIC MOBILE SETUP
-       ========================= */
+    /* =====================================================
+       GLOBAL MOBILE
+       ===================================================== */
 
     html,
     body {
@@ -1832,186 +1832,211 @@ html::-webkit-scrollbar {
     }
 
     body {
-        background-size: 25px 25px;
+        background-size: 35px 35px;
     }
 
     .website {
         width: 100%;
-        min-height: 100vh;
+        min-width: 0;
         margin: 0;
         zoom: 1;
     }
 
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
-    /* =========================
+
+    /* =====================================================
        BANNER
-       ========================= */
+       ===================================================== */
 
     .banner {
-        width: calc(100% - 24px);
-        height: 120px;
-        margin: 12px auto 0;
+        width: calc(100% - 20px);
+        height: 115px;
+
+        margin: 10px auto 0;
+
+        border: 3px solid #AF93F0;
+
+        overflow: hidden;
     }
 
     .banner img {
         width: 100%;
         height: 100%;
+
         object-fit: cover;
     }
 
 
-    /* =========================
+    /* =====================================================
        NAVIGATION
-       ========================= */
+       ===================================================== */
 
     .main-nav {
-        width: calc(100% - 24px);
+        width: calc(100% - 20px);
         height: auto;
-        min-height: 0;
 
-        margin: 12px auto 0;
-
+        margin: 10px auto 0;
         padding: 10px;
 
-        display: flex;
-        justify-content: center;
+        border: 3px solid #AF93F0;
+
+        display: block;
     }
 
     .nav-buttons {
         width: 100%;
 
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
-        gap: 8px;
-        justify-content: center;
+        gap: 10px;
     }
 
     .nav-buttons a {
+        width: 100%;
         min-width: 0;
-        width: calc(50% - 4px);
-        height: 45px;
+        height: 48px;
 
-        font-size: 14px;
+        font-size: 15px;
     }
 
 
-    /* =========================
-       GENERAL PAGE SETTINGS
-       ========================= */
+    /* =====================================================
+       COMMON PAGE FRAME
+       ===================================================== */
 
     .home-frame,
     .about-frame,
     .skills-page,
     .project-page {
+        width: calc(100% - 20px);
 
-        width: calc(100% - 24px);
-
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
 
         top: 20px;
 
-        border-width: 3px;
+        border: 3px solid #AF93F0;
     }
 
 
     /* =====================================================
-       HOME
+       HOME PAGE
        ===================================================== */
 
     .home-frame {
+        position: relative;
 
-        height: auto;
-        min-height: 0;
+        height: 1250px;
 
-        padding: 0 10px 35px;
+        padding: 0;
+
+        overflow: hidden;
     }
 
     .home-heading {
-
-        width: 90%;
+        width: calc(100% - 40px);
         height: 65px;
 
-        margin: 30px auto 25px;
+        margin: 30px auto 0;
 
-        font-size: 20px;
+        font-size: 19px;
 
         text-align: center;
     }
 
+
+    /* -------------------------
+       HOME CLOSED MESSAGE
+       ------------------------- */
+
     .home-closed-message {
+        top: 420px;
+        left: 10px;
+        right: 10px;
 
-        top: 180px;
-
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.7;
+
         letter-spacing: 1px;
 
-        padding: 0 15px;
+        text-align: center;
     }
 
 
-    /* =========================
+    /* -------------------------
        HOME WINDOWS
-       ========================= */
+       ------------------------- */
 
     .profile-window,
     .links-window {
+        position: absolute;
 
-        position: relative;
+        left: 10px;
+        right: 10px;
 
-        left: auto;
-        top: auto;
-
-        width: 100%;
+        width: auto;
         height: auto;
 
-        margin: 0 auto 25px;
+        margin: 0;
     }
 
-    .window-title {
+    .profile-window {
+        top: 140px;
+    }
 
+    .links-window {
+        top: 650px;
+    }
+
+
+    /* -------------------------
+       WINDOW TITLE
+       ------------------------- */
+
+    .window-title {
         height: 50px;
 
-        padding: 0 12px;
+        padding: 0 10px;
 
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .window-controls {
-        gap: 6px;
+        gap: 5px;
     }
 
     .window-controls span {
+        width: 27px;
+        height: 27px;
 
-        width: 28px;
-        height: 28px;
-
-        font-size: 17px;
+        font-size: 16px;
     }
 
 
-    /* =========================
+    /* -------------------------
        PROFILE
-       ========================= */
+       ------------------------- */
 
     .window-content {
-        padding: 20px 15px 25px;
+        padding: 20px 12px 25px;
     }
 
     .photo-box {
-
-        width: 100%;
-        max-width: 280px;
-
+        width: min(75vw, 260px);
         height: auto;
+
         aspect-ratio: 1 / 0.94;
 
         margin: 0 auto;
     }
 
     .self-photo {
-
         width: 100%;
         height: 100%;
 
@@ -2019,40 +2044,39 @@ html::-webkit-scrollbar {
     }
 
     .name {
+        width: 100%;
 
-        margin-top: 25px;
+        margin-top: 22px;
 
-        font-size: 16px;
+        font-size: 15px;
 
         white-space: normal;
-        width: 100%;
 
         animation: none;
 
         border-right: none;
+
+        text-align: center;
     }
 
 
-    /* =========================
+    /* -------------------------
        LINKS
-       ========================= */
+       ------------------------- */
 
     .links-content {
-
-        padding: 20px 15px;
+        padding: 20px 12px;
     }
 
     .links-content a {
-
         width: 100%;
-        min-height: 52px;
-        height: auto;
+        height: 52px;
 
-        margin-bottom: 15px;
+        margin-bottom: 12px;
 
-        padding: 8px 10px;
+        padding: 0 10px;
 
-        gap: 10px;
+        gap: 8px;
 
         font-size: 9px;
 
@@ -2060,183 +2084,355 @@ html::-webkit-scrollbar {
     }
 
     .links-content a span {
-
         min-width: 0;
+
+        line-height: 1.2;
 
         overflow-wrap: anywhere;
         word-break: break-word;
-
-        line-height: 1.2;
     }
 
     .link-icon {
+        width: 32px;
+        height: 32px;
 
-        width: 34px;
-        height: 34px;
-
-        flex: 0 0 34px;
+        flex: 0 0 32px;
 
         margin-left: 0;
     }
 
 
+    /* -------------------------
+       HOME DIAMOND
+       ------------------------- */
+
+    .home-frame .diamond-pattern {
+        left: 15px;
+        right: 15px;
+
+        bottom: 35px;
+
+        height: 90px;
+
+        gap: 20px;
+    }
+
+    .home-frame .diamond-pattern span {
+        font-size: 28px;
+    }
+
+    .home-frame .diamond-pattern span:nth-child(even) {
+        font-size: 19px;
+    }
+
+
     /* =====================================================
-       ABOUT
+       ABOUT PAGE
        ===================================================== */
 
     .about-frame {
+        position: relative;
 
-        height: auto;
+        height: 1500px;
 
-        min-height: 0;
+        padding-top: 30px;
 
-        padding: 30px 10px 35px;
+        overflow: hidden;
     }
 
     .about-heading {
-
         width: 150px;
         height: 65px;
 
         font-size: 27px;
     }
 
-    .about-closed-message {
-
-        top: 180px;
-
-        font-size: 15px;
-        line-height: 1.7;
-
-        padding: 0 15px;
-    }
-
     .about-window {
+        position: absolute;
 
-        position: relative;
+        top: 140px;
+        left: 10px;
 
-        left: auto;
-        top: auto;
-
-        width: 100%;
+        width: calc(100% - 20px);
         height: auto;
-
-        margin-top: 25px;
     }
 
     .about-text {
+        padding: 25px 16px;
 
-        padding: 25px 18px;
-
-        font-size: 14px;
-        line-height: 1.5;
+        font-size: 13px;
+        line-height: 1.55;
 
         text-align: left;
     }
 
     .about-text p {
-
         margin-bottom: 20px;
 
-        line-height: 1.5;
+        line-height: 1.55;
 
         text-indent: 1em;
     }
 
+    .about-closed-message {
+        top: 300px;
+
+        left: 10px;
+        right: 10px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        padding: 0 10px;
+    }
+
 
     /* =====================================================
-       SKILLS
+       SKILLS PAGE
        ===================================================== */
 
     .skills-page {
+        position: relative;
 
-        height: auto;
+        height: 1750px;
 
-        min-height: 0;
+        padding: 0;
 
-        padding: 30px 10px 40px;
+        overflow: hidden;
     }
+
+
+    /* -------------------------
+       MAIN SKILLS HEADING
+       ------------------------- */
 
     .skills-page .skills-heading {
+        position: absolute;
 
-        width: 160px;
+        top: 30px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 150px;
         height: 65px;
 
-        margin: 0 auto;
+        margin: 0;
 
-        font-size: 27px;
+        font-size: 25px;
     }
 
-    .additional-skills-heading {
 
-        width: 90%;
-        height: 65px;
+    /* -------------------------
+       MAIN SKILLS WINDOW
+       ------------------------- */
 
-        margin: 35px auto 0;
+    .skills-page .skills-window {
+        position: absolute;
 
-        font-size: 22px;
+        top: 125px;
+        left: 10px;
+
+        width: calc(100% - 20px);
+        height: 300px;
+
+        margin: 0;
+    }
+
+
+    /* -------------------------
+       MAIN SKILLS CLOSED
+       ------------------------- */
+
+    .skills-page .skills-closed-message {
+        position: absolute;
+
+        top: 210px;
+
+        left: 15px;
+        right: 15px;
+
+        padding: 0;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        letter-spacing: 1px;
+
         text-align: center;
     }
+
+
+    /* -------------------------
+       ADDITIONAL SKILLS HEADING
+       ------------------------- */
+
+    .skills-page .additional-skills-heading {
+        position: absolute;
+
+        top: 500px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: calc(100% - 40px);
+        height: 65px;
+
+        margin: 0;
+
+        font-size: 21px;
+
+        text-align: center;
+    }
+
+
+    /* -------------------------
+       ADDITIONAL SKILLS WINDOW
+       ------------------------- */
+
+    .skills-page .additional-skills-window {
+        position: absolute;
+
+        top: 595px;
+        left: 10px;
+
+        width: calc(100% - 20px);
+        height: 300px;
+
+        margin: 0;
+    }
+
+
+    /* -------------------------
+       ADDITIONAL CLOSED
+       ------------------------- */
+
+    .skills-page .additional-closed-message {
+        position: absolute;
+
+        top: 680px;
+
+        left: 15px;
+        right: 15px;
+
+        padding: 0;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        letter-spacing: 1px;
+
+        text-align: center;
+    }
+
+
+    /* -------------------------
+       TECHNICAL TOOLS HEADING
+       ------------------------- */
 
     .skills-page .technical-heading {
+        position: absolute;
 
-        position: relative;
+        top: 970px;
+        left: 50%;
 
-        top: auto;
-        left: auto;
-        right: auto;
+        transform: translateX(-50%);
 
-        width: 90%;
+        width: calc(100% - 40px);
         height: 65px;
 
-        margin: 35px auto 0;
+        margin: 0;
 
-        font-size: 20px;
+        font-size: 19px;
+
         text-align: center;
     }
 
 
-    /* =========================
-       SKILL WINDOWS
-       ========================= */
+    /* -------------------------
+       TECHNICAL TOOLS WINDOW
+       ------------------------- */
 
-    .skills-page .skills-window,
-    .skills-page .additional-skills-window,
     .skills-page .technical-tools-window {
+        position: absolute;
 
-        position: relative;
+        top: 1065px;
+        left: 10px;
 
-        left: auto;
-        top: auto;
+        width: calc(100% - 20px);
+        height: 450px;
 
-        width: 100%;
-        height: auto;
-
-        margin: 20px auto 0;
+        margin: 0;
     }
 
 
-    /* =========================
-       SKILL ITEMS
-       ========================= */
+    /* -------------------------
+       TECHNICAL CLOSED
+       ------------------------- */
+
+    .skills-page .technical-closed-message {
+        position: absolute;
+
+        top: 1160px;
+
+        left: 15px;
+        right: 15px;
+
+        padding: 0;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        letter-spacing: 1px;
+
+        text-align: center;
+    }
+
+
+    /* -------------------------
+       SKILLS WINDOW TITLE
+       ------------------------- */
+
+    .skills-page .window-title {
+        height: 50px;
+
+        padding: 0 10px;
+
+        font-size: 15px;
+    }
+
+    .skills-page .window-controls {
+        gap: 5px;
+    }
+
+    .skills-page .window-controls span {
+        width: 27px;
+        height: 27px;
+
+        font-size: 16px;
+    }
+
+
+    /* -------------------------
+       SKILL LIST
+       ------------------------- */
 
     .skills-page .skill-list {
-
         width: 100%;
 
-        padding: 20px 12px;
+        padding: 18px 12px;
 
-        gap: 10px;
+        gap: 9px;
     }
 
     .skills-page .skill-item {
-
         width: 100%;
-        min-height: 45px;
+        min-height: 43px;
 
-        padding: 8px 10px;
+        padding: 7px 8px;
 
-        font-size: 13px;
+        font-size: 12px;
 
         white-space: normal;
 
@@ -2244,73 +2440,38 @@ html::-webkit-scrollbar {
     }
 
 
-    /* =========================
-       TECHNICAL TOOLS
-       ========================= */
+    /* -------------------------
+       TECHNICAL TOOL LIST
+       ------------------------- */
 
     .skills-page .tool-list {
+        width: 100%;
 
-        padding: 20px 10px;
+        padding: 15px 10px;
 
-        gap: 10px;
+        gap: 9px;
     }
 
     .skills-page .tool-item {
-
         width: 100%;
         min-width: 0;
 
-        height: 55px;
+        height: 48px;
 
-        padding: 7px 10px;
+        padding: 5px 8px;
 
-        gap: 10px;
+        gap: 8px;
 
         justify-content: flex-start;
 
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .skills-page .skill-icon {
+        width: 30px;
+        height: 30px;
 
-        width: 35px;
-        height: 35px;
-
-        flex: 0 0 35px;
-    }
-
-
-    /* =========================
-       SKILLS CLOSED MESSAGES
-       ========================= */
-
-    .skills-page .skills-closed-message,
-    .skills-page .additional-closed-message,
-    .skills-page .technical-closed-message {
-
-        position: absolute;
-
-        left: 0;
-        right: 0;
-
-        padding: 0 10px;
-
-        font-size: 14px;
-
-        line-height: 1.7;
-        letter-spacing: 1px;
-    }
-
-    .skills-page .skills-closed-message {
-        top: 160px;
-    }
-
-    .skills-page .additional-closed-message {
-        top: 430px;
-    }
-
-    .skills-page .technical-closed-message {
-        top: 700px;
+        flex: 0 0 30px;
     }
 
 
@@ -2319,68 +2480,94 @@ html::-webkit-scrollbar {
        ===================================================== */
 
     .project-page {
+        position: relative;
 
-        height: auto;
+        height: 2050px;
 
-        min-height: 0;
+        padding: 0;
 
-        padding: 30px 10px 50px;
+        overflow: hidden;
     }
 
+
+    /* -------------------------
+       PROJECT HEADING
+       ------------------------- */
+
     .project-heading {
+        position: absolute;
+
+        top: 30px;
+        left: 50%;
+
+        transform: translateX(-50%);
 
         width: 180px;
         height: 65px;
 
-        font-size: 25px;
+        margin: 0;
+
+        font-size: 24px;
     }
 
+
+    /* -------------------------
+       PROJECT CLOSED MESSAGE
+       ------------------------- */
+
     .project-closed-message {
+        top: 145px;
 
-        top: 180px;
+        left: 15px;
+        right: 15px;
 
-        font-size: 15px;
+        font-size: 14px;
 
         line-height: 1.7;
 
-        padding: 0 15px;
+        padding: 0;
     }
 
 
-    /* =========================
+    /* =====================================================
        PROJECT ROWS
-       ========================= */
+       ===================================================== */
 
     .project-row {
+        position: absolute;
 
-        position: relative;
+        left: 10px;
 
-        left: auto;
-        top: auto;
+        width: calc(100% - 20px);
 
-        width: 100%;
         height: auto;
 
-        margin: 25px auto 45px;
+        margin: 0;
     }
 
-    .hybrid-rush,
-    .ecoranger,
-    .gridmancer,
+    .hybrid-rush {
+        top: 130px;
+    }
+
+    .ecoranger {
+        top: 610px;
+    }
+
+    .gridmancer {
+        top: 1090px;
+    }
+
     .mindscape {
-
-        left: auto;
-        top: auto;
+        top: 1570px;
     }
 
 
-    /* =========================
+    /* =====================================================
        PROJECT WINDOWS
-       ========================= */
+       ===================================================== */
 
     .project-description-window,
     .project-showcase-window {
-
         position: relative;
 
         left: auto;
@@ -2392,39 +2579,40 @@ html::-webkit-scrollbar {
         margin: 0 0 15px;
     }
 
+
+    /* -------------------------
+       PROJECT WINDOW TITLE
+       ------------------------- */
+
     .project-page .window-title {
+        height: 48px;
 
-        height: 50px;
+        padding: 0 8px;
 
-        padding: 0 10px;
-
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .project-page .window-controls {
-
-        gap: 5px;
+        gap: 4px;
     }
 
     .project-page .window-controls span,
     .project-page .project-close-window {
+        width: 25px;
+        height: 25px;
 
-        width: 27px;
-        height: 27px;
-
-        font-size: 17px;
+        font-size: 15px;
     }
 
 
-    /* =========================
+    /* -------------------------
        PROJECT DESCRIPTION
-       ========================= */
+       ------------------------- */
 
     .project-description {
+        padding: 18px 12px;
 
-        padding: 20px 15px;
-
-        font-size: 12px;
+        font-size: 11px;
 
         line-height: 1.5;
 
@@ -2432,39 +2620,36 @@ html::-webkit-scrollbar {
     }
 
     .project-description strong {
+        margin-bottom: 9px;
 
-        margin-bottom: 10px;
-
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .project-description p {
-
-        margin-bottom: 15px;
+        margin-bottom: 13px;
     }
 
 
-    /* =========================
+    /* -------------------------
        PROJECT SHOWCASE
-       ========================= */
+       ------------------------- */
 
     .project-showcase {
-
-        padding: 20px 12px 25px;
+        padding: 18px 10px 22px;
     }
 
     .gif-placeholder {
-
         width: 100%;
-        max-width: 265px;
+        max-width: 280px;
 
         height: auto;
 
         aspect-ratio: 265 / 155;
+
+        margin: 0 auto;
     }
 
     .gif-placeholder .GIF {
-
         width: 100%;
         height: 100%;
 
@@ -2472,16 +2657,93 @@ html::-webkit-scrollbar {
     }
 
     .project-link {
-
+        width: 100%;
         max-width: 100%;
 
-        margin: 20px auto 0;
+        margin: 18px auto 0;
 
-        font-size: 15px;
+        font-size: 13px;
 
         text-align: center;
 
         overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+
+    /* =====================================================
+       PROJECT DIAMOND / DECORATION
+       ===================================================== */
+
+    .project-page .diamond-pattern {
+        left: 15px;
+        right: 15px;
+
+        bottom: 30px;
+
+        height: 80px;
+
+        gap: 18px;
+    }
+
+    .project-page .diamond-pattern span {
+        font-size: 25px;
+    }
+
+    .project-page .diamond-pattern span:nth-child(even) {
+        font-size: 17px;
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 380px) {
+
+        .banner {
+            height: 100px;
+        }
+
+        .nav-buttons a {
+            font-size: 13px;
+        }
+
+        .home-heading {
+            font-size: 17px;
+        }
+
+        .window-title {
+            font-size: 14px;
+        }
+
+        .name {
+            font-size: 13px;
+        }
+
+        .skills-page .skills-heading {
+            font-size: 22px;
+        }
+
+        .skills-page .additional-skills-heading {
+            font-size: 18px;
+        }
+
+        .skills-page .technical-heading {
+            font-size: 17px;
+        }
+
+        .project-heading {
+            font-size: 21px;
+        }
+
+        .project-page .window-title {
+            font-size: 11px;
+        }
+
+        .project-description {
+            font-size: 10px;
+        }
     }
 
 }
