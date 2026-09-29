@@ -803,7 +803,7 @@ body {
     padding: 58px 80px 45px;
 
     font-size: 19px;
-    line-height: 1.28;
+    line-height: 1.25;
 
     text-align: justify;
     color: #AF93F0;
@@ -811,7 +811,7 @@ body {
 
 .about-text p {
     margin-bottom: 30px;
-    line-height: 1.6;
+    line-height: 1.65;
     text-indent: 2em;
     margin-bottom: 2em;
 }
@@ -1667,7 +1667,7 @@ body {
     color: #AF93F0;
 
     font-size: 13px;
-    line-height: 1.18;
+    line-height: 1.5;
 
     text-align: justify;
 }
