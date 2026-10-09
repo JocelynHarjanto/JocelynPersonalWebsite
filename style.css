@@ -640,14 +640,26 @@ body {
    CLOSE / OPEN ANIMATIONS
    ========================= */
 
-#home .home-card.window-closed {
-    position: absolute;
-    transform: scale(.82);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
+   #home .home-card.window-closed {
+       position: absolute;
+       transform: scale(.82);
+       opacity: 0;
+       visibility: hidden;
+       pointer-events: none;
+   }
+   
+   /* Reserve the dashboard's original height */
+   #home .home-dashboard {
+       min-height: 100%;
+       align-items: start;
+   }
+   
+   /* Keep the Home frame from collapsing */
+   #home.home-frame {
+       min-height: 900px;
+   }
+   
+   
 #home .home-card.window-zoom-in {
     animation: homeZoomIn .3s ease both;
 }
@@ -666,21 +678,35 @@ body {
     to   { transform: scale(.82); opacity: 0; }
 }
 
+
 #home .home-closed-message {
+    position: absolute;
     display: none;
+    top: 330px;
+    left: 0;
+    right: 0;
     padding: 55px 12px;
     text-align: center;
     color: #AF93F0;
+    font-size: 28px;
     line-height: 1.8;
+    letter-spacing: 2px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 #home .home-closed-message.show {
     display: block;
-    animation: messageFadeIn .5s ease both;
+    animation: homeMessageFadeIn 1.2s ease forwards;
 }
 
 #home:has(.home-closed-message.show) .home-dashboard {
     display: none;
+}
+
+@keyframes homeMessageFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 
