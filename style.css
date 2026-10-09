@@ -148,49 +148,73 @@ body {
     box-shadow: none;
 }
 
+.nav-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+}
+
 
 /* =========================
    HOME FRAME
    ========================= */
 
-.home-frame {
+   
+#home.home-frame {
     position: relative;
-
     width: 1300px;
-    height: 950px;
-
+    height: auto;
+    min-height: 0;
     top: 45px;
     margin: 0 auto;
+    padding: 34px 6.5% 195px;
 
     border: 3px solid #AF93F0;
     background: #2b2231;
 }
 
-.home-heading { 
-    width: 750px; 
-    height: 87px; 
 
-    margin: 70px auto 0 auto;
+#home .home-dashboard {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(28px, 6.5vw, 100px);
+}
 
-    border: 3px solid #AF93F0; 
-
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-
-    font-size: 35px; 
-    color: #AF93F0; 
-    font-weight: 400; 
+#home .home-left-column,
+#home .home-project-column {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    min-width: 0;
 }
 
 /* =========================
-   HOME WINDOW INTERACTION
+   HOME HEADING
    ========================= */
 
-.home-frame .home-heading {
-    pointer-events: auto;
+#home .home-heading {
+    width: 750px;
+    max-width: 90%;
+    min-height: 87px;
+
+    margin: 0 auto 55px;
+
+    border: 3px solid #AF93F0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+    color: #AF93F0;
+    font-weight: 400;
+    text-align: center;
+
     cursor: pointer;
-    cursor: pointer;
+    position: relative;
+    z-index: 2;
 
     transition:
         background-color 0.15s ease,
@@ -199,7 +223,7 @@ body {
         transform 0.15s ease;
 }
 
-.home-frame .home-heading:hover {
+#home .home-heading:hover {
     background-color: rgba(208, 120, 255, 0.25);
     color: #e39dff;
 
@@ -210,19 +234,190 @@ body {
     transform: translate(-1px, -1px);
 }
 
-.home-frame .home-heading:active {
-    background-color: rgba(208, 120, 255, 0.4);
-
+#home .home-heading:active {
     transform: translate(2px, 2px);
-
     box-shadow: none;
 }
 
+/* =========================
+   HOME DASHBOARD
+   ========================= */
 
-.home-frame .close-window {
+#home .home-dashboard {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(28px, 6.5vw, 100px);
+}
+
+/* =========================
+   HOME WINDOWS
+   ========================= */
+
+#home .home-card {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+
+    border: 3px solid #AF93F0;
+    background: #2b2231;
+
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+/* No hover effect on the entire window */
+#home .home-card:hover {
+    box-shadow: none;
+    border-color: #AF93F0;
+}
+
+
+/* =========================
+   TITLE BAR
+   ========================= */
+
+#home .window-title {
+    height: 62px;
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 3px solid #AF93F0;
+    color: #AF93F0;
+    font-size: 24px;
+}
+
+#home .window-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#home .window-controls span,
+#home .window-controls button {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #AF93F0;
+    background: transparent;
+    color: #AF93F0;
+    font-size: 22px;
+    line-height: 1;
+}
+
+
+/* Only the X button responds to hover */
+#home .window-controls button {
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease,
+                border-color .15s ease, transform .15s ease;
+}
+
+#home .window-controls button:hover {
+    background: rgba(255, 120, 180, .25);
+    color: #ff9dcc;
+    border-color: #ff9dcc;
+    transform: translateY(-1px);
+}
+
+#home .window-controls button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================
+   PROFILE
+   ========================= */
+
+#home .window-content {
+    padding: 40px;
+}
+
+#home .photo-box {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 3px solid #AF93F0;
+}
+
+#home .self-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#home .name {
+    width: 100%;
+    margin-top: 38px;
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+
+    font-size: clamp(14px, 1.5vw, 22px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #E2D6FF;
+
+    text-shadow: 1px 1px 0 #AF93F0,
+                 2px 2px 0 #8068B5,
+                 3px 3px 0 #554477;
+
+    animation: none;
+}
+
+/* =========================
+   About Me Home
+   ========================= */
+
+#home .window-content {
+    padding: 40px;
+}
+
+#home .AboutMe-Text {
+    width: 100%;
+    margin-top: 0 px;
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+
+    font-size: clamp(12px, 1.5vw, 12px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #AF93F0;
+}
+
+#home .AboutMe-learnMore-box{
+    width: 150px;
+    height: 40px;
+    margin: 20px auto 0; 
+
+    border: 3px solid #AF93F0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    color: #AF93F0;
+    font-weight: 400;
+
     pointer-events: auto;
     cursor: pointer;
-    cursor: pointer;
+    user-select: none;
 
     transition:
         background-color 0.15s ease,
@@ -231,296 +426,138 @@ body {
         transform 0.15s ease;
 }
 
-.home-frame .close-window:hover {
-    background-color: rgba(255, 120, 180, 0.25);
-    color: #ff9dcc;
+#home .AboutMe-learnMore-box:hover {
+    background-color: rgba(208, 120, 255, 0.25);
+    color: #e39dff;
 
     box-shadow:
-        3px 3px 0 rgba(255, 157, 204, 0.25),
-        0 0 10px rgba(255, 120, 180, 0.35);
+        3px 3px 0 rgba(229, 157, 255, 0.25),
+        0 0 10px rgba(235, 120, 255, 0.35);
 
     transform: translate(-1px, -1px);
 }
 
-.home-frame .close-window:active {
-    background-color: rgba(255, 120, 180, 0.4);
+#home .AboutMe-learnMore-box:active {
+    background-color: rgba(208, 120, 255, 0.4);
 
     transform: translate(2px, 2px);
 
     box-shadow: none;
 }
 
-.home-frame .home-heading.closed-message {
-    cursor: pointer;
-}
-
-.home-closed-message {
-    position: absolute;
-
-    top: 330px;
-    left: 0;
-    right: 0;
-
-    text-align: center;
-
-    font-size: 28px;
-    line-height: 1.8;
-    letter-spacing: 2px;
-
-    color: #AF93F0;
-
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Fade in after both windows close */
-.home-closed-message.show {
-    animation: messageFadeIn 1.2s ease forwards;
-}
-
-@keyframes messageFadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 /* =========================
-   WINDOWS
+   Skills Home
    ========================= */
 
-.window {
-    position: absolute;
-
-    border: 3px solid #AF93F0;
-    background: #2b2231;
-}
-
-.profile-window {
-    left: 125px;
-    top: 215px;
-    width: 480px;
-    height: 535px;
-}
-
-.links-window {
-    left: 680px;
-    top: 215px;
-    width: 475px;
-    height: 535px;
-}
-
-/* =========================
-   HOME WINDOW ANIMATION
-   ========================= */
-
-.home-frame .profile-window,
-.home-frame .links-window {
-    transform: scale(1);
-    opacity: 1;
-    visibility: visible;
-    transform-origin: center center;
-
-    transition:
-        transform 0.35s ease,
-        opacity 0.35s ease,
-        visibility 0s linear 0s;
-}
-
-
-/* CLOSE */
-.home-frame .profile-window.window-closed,
-.home-frame .links-window.window-closed {
-    transform: scale(0);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition:
-        transform 0.35s ease,
-        opacity 0.35s ease,
-        visibility 0s linear 0.35s;
-}
-
-
-/* OPEN */
-.home-frame .profile-window.window-zoom-in,
-.home-frame .links-window.window-zoom-in {
-    animation: homeWindowZoomIn 0.35s ease forwards;
-}
-
-
-@keyframes homeWindowZoomIn {
-
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-}
-
-.home-frame .profile-window,
-.home-frame .links-window {
-    transform: scale(1);
-    opacity: 1;
-    visibility: visible;
-    transform-origin: center center;
-    
-    transition:
-        transform 0.35s ease,
-        opacity 0.35s ease,
-        visibility 0s linear 0s;
-}
-
-.window-title {
-    width: 100%;
-    height: 62px;
-
-    border-bottom: 3px solid #AF93F0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 22px;
-
-    font-size: 24px;
-    color: #AF93F0;
-    font-weight: 400;
-}
-
-.window-controls {
-    display: flex;
-    gap: 12px;
-}
-
-.window-controls span {
-    width: 34px;
-    height: 34px;
-
-    border: 3px solid #AF93F0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #AF93F0;
-    font-size: 22px;
-    line-height: 1;
-
-    /* Deliberately non-interactive */
-    pointer-events: none;
-    user-select: none;
-}
-
-/* =========================
-   PROFILE
-   ========================= */
-
-.window-content {
+#home .window-content {
     padding: 40px;
 }
 
-.photo-box {
-    width: 335px;
-    height: 315px;
+   /* =========================
+   SKILLS TAG LAYOUT
+   ========================= */
+
+#home .skill-tags {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 14px 12px;
 
     margin: 0 auto;
+}
 
-    border: 3px solid #AF93F0;
-
-    display: flex;
+/* Default skill tag styling */
+#home .skill-tags span {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 38px;
-}
+    padding: 7px 9px;
+    border: 2px solid #AF93F0;
 
-.self-photo {
-    width: 335px;
-    height: 310px;
-    object-fit: cover;
-}
+    color: #AF93F0;
+    background: transparent;
 
-.name {
-    margin-top: 38px;
-    text-align: center;
-
-    font-size: 21px;
-    font-weight: 700;
-    letter-spacing: 1px;
-
-    color: #E2D6FF;
-
-    text-shadow:
-        1px 1px 0 #AF93F0,
-        2px 2px 0 #8068B5,
-        3px 3px 0 #554477;
-
-    overflow: hidden;
+    font-size: 13px;
     white-space: nowrap;
-    width: 0;
-    border-right: 3px solid #AF93F0;
-
-    animation: typing 3s steps(22, end) forwards;
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-        border-color: #AF93F0;
-    }
-
-    to {
-        width: 100%;
-        border-color: transparent;
-    }
+/* First skill spans both columns */
+#home .skill-tags span:first-child {
+    grid-column: 1 / -1;
+    justify-self: center;
 }
 
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+/* Second and third skills sit side by side */
+#home .skill-tags span:nth-child(2) {
+    grid-column: 1;
+}
+
+#home .skill-tags span:nth-child(3) {
+    grid-column: 2;
 }
 
 /* =========================
    LINKS
    ========================= */
 
-.links-content {
+#home .links-content {
     padding: 43px 48px;
 }
 
-.links-content a {
+#home .links-content a {
     width: 100%;
-    height: 57px;
-
+    min-height: 57px;
+    height: auto;
     margin-bottom: 25px;
+    padding: 7px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    border: 3px solid #AF93F0;
+    background: transparent;
+    color: #AF93F0;
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: background .15s ease, color .15s ease,
+                transform .15s ease;
+}
+
+#home .links-content a:hover {
+    background: rgba(208, 120, 255, .2);
+    color: #e39dff;
+    transform: translateY(-1px);
+}
+
+#home .link-icon {
+    width: 41px;
+    height: 41px;
+    flex: 0 0 41px;
+    object-fit: contain;
+}
+
+#home .Skills-learnMore-box{
+    width: 150px;
+    height: 40px;
+    margin: 20px auto 0; 
 
     border: 3px solid #AF93F0;
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    padding: 0 28px;
-
-    color: #f2edf5;
-    background: #2b2231;
-
-    text-decoration: none;
-
-    font-size: 12px;
-    color:#AF93F0;
+    font-size: 14px;
+    color: #AF93F0;
     font-weight: 400;
-    gap: 18px;
+
+    pointer-events: auto;
+    cursor: pointer;
+    user-select: none;
 
     transition:
         background-color 0.15s ease,
@@ -529,7 +566,7 @@ body {
         transform 0.15s ease;
 }
 
-.links-content a:hover {
+#home .Skills-learnMore-box:hover {
     background-color: rgba(208, 120, 255, 0.25);
     color: #e39dff;
 
@@ -540,7 +577,7 @@ body {
     transform: translate(-1px, -1px);
 }
 
-.links-content a:active {
+#home .Skills-learnMore-box:active {
     background-color: rgba(208, 120, 255, 0.4);
 
     transform: translate(2px, 2px);
@@ -548,21 +585,103 @@ body {
     box-shadow: none;
 }
 
-.links-content a span {
-    display: block;
-    line-height: 1;
+
+/* =========================
+   PROJECT GIF PLACEHOLDERS
+   ========================= */
+
+#home .home-project-content {
+    padding: 24px 16px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+
+    text-align: center;
 }
 
-.link-icon {
-    width: 41px;
-    height: 41px;
-    margin-left: -10px;
-    flex: 0 0 45px;
+/* =========================
+   HOME PROJECT GIF
+   ========================= */
+
+#home .home-gif-placeholder {
+    width: min(100%, 300px);
+    aspect-ratio: 1.7 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #AF93F0;
+    overflow: hidden;
+}
+
+/* GIF FIT INSIDE BOX */
+
+#home .home-gif-placeholder .GIF {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
-    display: block;
+    object-position: center;
+}
+
+#home .home-project-content p {
+    color: #AF93F0;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 
+/* =========================
+   CLOSE / OPEN ANIMATIONS
+   ========================= */
+
+#home .home-card.window-closed {
+    position: absolute;
+    transform: scale(.82);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#home .home-card.window-zoom-in {
+    animation: homeZoomIn .3s ease both;
+}
+
+#home .home-card.window-zoom-out {
+    animation: homeZoomOut .25s ease both;
+}
+
+@keyframes homeZoomIn {
+    from { transform: scale(.82); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes homeZoomOut {
+    from { transform: scale(1); opacity: 1; }
+    to   { transform: scale(.82); opacity: 0; }
+}
+
+#home .home-closed-message {
+    display: none;
+    padding: 55px 12px;
+    text-align: center;
+    color: #AF93F0;
+    line-height: 1.8;
+}
+
+#home .home-closed-message.show {
+    display: block;
+    animation: messageFadeIn .5s ease both;
+}
+
+#home:has(.home-closed-message.show) .home-dashboard {
+    display: none;
+}
 
 
 /* =========================
@@ -577,7 +696,7 @@ body {
     bottom: 55px;
 
     height: 125px;
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -791,29 +910,80 @@ body {
     }
 }
 
+
 .about-window {
+    position: absolute;
     left: 100px;
     top: 215px;
 
     width: 1110px;
     height: 690px;
+
+    border: 3px solid #AF93F0;
+    background: #2b2231;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.about-text {
-    padding: 58px 80px 45px;
+/* Window title bar */
+.about-window .window-title {
+    width: 100%;
+    height: 62px;
 
-    font-size: 19px;
-    line-height: 1.25;
+    border-bottom: 3px solid #AF93F0;
 
-    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    font-size: 24px;
     color: #AF93F0;
+    font-weight: 400;
 }
 
-.about-text p {
-    margin-bottom: 30px;
+/* Window control buttons */
+.about-window .window-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-window .window-controls span {
+    width: 34px;
+    height: 34px;
+
+    border: 3px solid #AF93F0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #AF93F0;
+
+    font-size: 22px;
+    line-height: 1;
+
+    user-select: none;
+}
+
+/* Window content */
+.about-window .about-text {
+    height: calc(100% - 48px);
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    padding: 50px 60px;
+    color: #AF93F0;
+    font-size: 19px;
     line-height: 1.65;
+    text-align: justify;
+}
+
+.about-window .about-text p {
+    margin: 0 0 30px;
     text-indent: 2em;
-    margin-bottom: 2em;
 }
 
 /* =========================================================
@@ -1814,830 +1984,5 @@ html::-webkit-scrollbar {
     }
 }
 
-/* =========================================================
-   MOBILE RESPONSIVE DESIGN
-   ========================================================= */
 
-@media (max-width: 700px) {
 
-    /* =====================================================
-       GLOBAL
-       ===================================================== */
-
-    html,
-    body {
-        width: 100%;
-        min-width: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-        margin: 0;
-    }
-
-    body {
-        background-size: 25px 25px;
-    }
-
-    .website {
-        width: 100%;
-        min-height: 100vh;
-        margin: 0;
-        zoom: 1;
-    }
-
-
-    /* =====================================================
-       BANNER
-       ===================================================== */
-
-    .banner {
-        width: calc(100% - 24px);
-        height: 120px;
-        margin: 12px auto 0;
-    }
-
-    .banner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-
-    /* =====================================================
-       NAVIGATION
-       ===================================================== */
-
-    .main-nav {
-        width: calc(100% - 24px);
-        height: auto;
-        min-height: 0;
-
-        margin: 12px auto 0;
-        padding: 10px;
-    }
-
-    .nav-buttons {
-        width: 100%;
-
-        display: flex;
-        flex-wrap: wrap;
-
-        gap: 8px;
-        justify-content: center;
-    }
-
-    .nav-buttons a {
-        width: calc(50% - 4px);
-        min-width: 0;
-        height: 45px;
-
-        font-size: 14px;
-    }
-
-
-    /* =====================================================
-       COMMON PAGE FRAME
-       ===================================================== */
-
-    .home-frame,
-    .about-frame,
-    .skills-page,
-    .project-page {
-        width: calc(100% - 24px);
-
-        margin-left: auto;
-        margin-right: auto;
-
-        top: 20px;
-
-        border-width: 3px;
-    }
-
-
-    /* =====================================================
-       HOME
-       ===================================================== */
-
-    .home-frame {
-        height: auto;
-        min-height: 1050px;
-
-        padding: 30px 10px 40px;
-    }
-
-    .home-heading {
-        width: 90%;
-        height: 65px;
-
-        margin: 0 auto 30px;
-
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .home-closed-message {
-        top: 180px;
-
-        padding: 0 15px;
-
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-
-    /* HOME WINDOWS */
-
-    .profile-window,
-    .links-window {
-        position: relative;
-
-        left: auto;
-        top: auto;
-
-        width: 100%;
-        height: auto;
-
-        margin: 0 auto 25px;
-    }
-
-    .window-title {
-        height: 50px;
-
-        padding: 0 12px;
-
-        font-size: 17px;
-    }
-
-    .window-controls {
-        gap: 6px;
-    }
-
-    .window-controls span {
-        width: 28px;
-        height: 28px;
-
-        font-size: 17px;
-    }
-
-
-    /* PROFILE */
-
-    .window-content {
-        padding: 20px 15px 25px;
-    }
-
-    .photo-box {
-        width: 100%;
-        max-width: 280px;
-
-        height: auto;
-        aspect-ratio: 1 / 0.94;
-
-        margin: 0 auto;
-    }
-
-    .self-photo {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-
-    .name {
-        margin-top: 25px;
-
-        width: 100%;
-
-        font-size: 16px;
-
-        white-space: normal;
-
-        animation: none;
-        border-right: none;
-    }
-
-
-    /* LINKS */
-
-    .links-content {
-        padding: 20px 15px;
-    }
-
-    .links-content a {
-        width: 100%;
-        min-height: 52px;
-        height: auto;
-
-        margin-bottom: 15px;
-
-        padding: 8px 10px;
-
-        gap: 10px;
-
-        font-size: 9px;
-    }
-
-    .links-content a span {
-        min-width: 0;
-
-        overflow-wrap: anywhere;
-        word-break: break-word;
-
-        line-height: 1.2;
-    }
-
-    .link-icon {
-        width: 34px;
-        height: 34px;
-
-        flex: 0 0 34px;
-
-        margin-left: 0;
-    }
-
-
-    /* =====================================================
-       ABOUT
-       ===================================================== */
-
-    .about-frame {
-        height: auto;
-        min-height: 1100px;
-
-        padding: 30px 10px 40px;
-    }
-
-    .about-heading {
-        width: 150px;
-        height: 65px;
-
-        margin: 0 auto;
-
-        font-size: 27px;
-    }
-
-    .about-closed-message {
-        top: 180px;
-
-        padding: 0 15px;
-
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-    .about-window {
-        position: relative;
-
-        left: auto;
-        top: auto;
-
-        width: 100%;
-        height: auto;
-
-        margin-top: 30px;
-    }
-
-    .about-text {
-        padding: 25px 18px;
-
-        font-size: 14px;
-        line-height: 1.5;
-
-        text-align: left;
-    }
-
-    .about-text p {
-        margin-bottom: 20px;
-
-        line-height: 1.5;
-
-        text-indent: 1em;
-    }
-
-
-    /* =====================================================
-       SKILLS PAGE
-       IMPORTANT:
-       Windows stay ABSOLUTE.
-       This prevents the closed/open states from changing
-       the page layout.
-       ===================================================== */
-
-    .skills-page {
-        position: relative;
-
-        width: calc(100% - 24px);
-
-        height: 1550px;
-        min-height: 1550px;
-
-        padding: 0;
-
-        overflow: hidden;
-    }
-
-
-    /* SKILLS HEADING */
-
-    .skills-page .skills-heading {
-        position: absolute;
-
-        top: 30px;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        width: 160px;
-        height: 65px;
-
-        margin: 0;
-
-        font-size: 27px;
-    }
-
-
-    /* ADDITIONAL SKILLS HEADING */
-
-    .skills-page .additional-skills-heading {
-        position: absolute;
-
-        top: 470px;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        width: calc(100% - 30px);
-        height: 65px;
-
-        margin: 0;
-
-        font-size: 20px;
-        text-align: center;
-    }
-
-
-    /* TECHNICAL TOOLS HEADING */
-
-    .skills-page .technical-heading {
-        position: absolute;
-
-        top: 910px;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        width: calc(100% - 30px);
-        height: 65px;
-
-        margin: 0;
-
-        font-size: 19px;
-        text-align: center;
-    }
-
-
-    /* =====================================================
-       SKILLS WINDOWS
-       ===================================================== */
-
-    .skills-page .skills-window,
-    .skills-page .additional-skills-window,
-    .skills-page .technical-tools-window {
-
-        position: absolute;
-
-        left: 10px;
-
-        width: calc(100% - 20px);
-
-        margin: 0;
-    }
-
-
-    /* MAIN SKILLS */
-
-    .skills-page .skills-window {
-        top: 125px;
-
-        height: 285px;
-    }
-
-
-    /* ADDITIONAL SKILLS */
-
-    .skills-page .additional-skills-window {
-        top: 565px;
-
-        height: 285px;
-    }
-
-
-    /* TECHNICAL TOOLS */
-
-    .skills-page .technical-tools-window {
-        top: 1005px;
-
-        height: 350px;
-    }
-
-
-    /* =====================================================
-       SKILLS WINDOW TITLE
-       ===================================================== */
-
-    .skills-page .window-title {
-        height: 50px;
-
-        padding: 0 10px;
-
-        font-size: 15px;
-    }
-
-    .skills-page .window-controls {
-        gap: 5px;
-    }
-
-    .skills-page .window-controls span {
-        width: 27px;
-        height: 27px;
-
-        font-size: 17px;
-    }
-
-
-    /* =====================================================
-       SKILL ITEMS
-       ===================================================== */
-
-    .skills-page .skill-list {
-        width: 100%;
-
-        padding: 20px 12px;
-
-        gap: 10px;
-    }
-
-    .skills-page .skill-item {
-        width: 100%;
-        min-height: 45px;
-
-        padding: 8px 10px;
-
-        font-size: 13px;
-
-        white-space: normal;
-
-        text-align: center;
-    }
-
-
-    /* =====================================================
-       TECHNICAL TOOLS
-       ===================================================== */
-
-    .skills-page .tool-list {
-        padding: 20px 10px;
-
-        gap: 10px;
-    }
-
-    .skills-page .tool-item {
-        width: 100%;
-        min-width: 0;
-
-        height: 55px;
-
-        padding: 7px 10px;
-
-        gap: 10px;
-
-        justify-content: flex-start;
-
-        font-size: 13px;
-    }
-
-    .skills-page .skill-icon {
-        width: 35px;
-        height: 35px;
-
-        flex: 0 0 35px;
-    }
-
-
-    /* =====================================================
-       SKILLS CLOSED MESSAGES
-       ===================================================== */
-
-    .skills-page .skills-closed-message,
-    .skills-page .additional-closed-message,
-    .skills-page .technical-closed-message {
-
-        position: absolute;
-
-        left: 10px;
-        right: 10px;
-
-        padding: 0;
-
-        font-size: 13px;
-
-        line-height: 1.7;
-
-        letter-spacing: 1px;
-
-        text-align: center;
-    }
-
-    .skills-page .skills-closed-message {
-        top: 210px;
-    }
-
-    .skills-page .additional-closed-message {
-        top: 650px;
-    }
-
-    .skills-page .technical-closed-message {
-        top: 1090px;
-    }
-
-
-    /* =====================================================
-       SKILLS DIAMONDS
-       ===================================================== */
-
-    .skills-page .diamond-pattern {
-        position: absolute;
-
-        left: 15px;
-        right: 15px;
-        bottom: 20px;
-
-        width: auto;
-        height: 60px;
-
-        overflow: hidden;
-    }
-
-
-    /* =====================================================
-       PROJECT PAGE
-       IMPORTANT:
-       Project rows stay ABSOLUTE.
-       Description + showcase stay ABSOLUTE inside rows.
-       ===================================================== */
-
-    .project-page {
-        position: relative;
-
-        width: calc(100% - 24px);
-
-        height: 2700px;
-        min-height: 2700px;
-
-        padding: 0;
-
-        overflow: hidden;
-    }
-
-
-    /* =====================================================
-       PROJECT HEADING
-       ===================================================== */
-
-    .project-heading {
-        position: absolute;
-
-        top: 30px;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        width: 180px;
-        height: 65px;
-
-        margin: 0;
-
-        font-size: 25px;
-    }
-
-
-    /* =====================================================
-       PROJECT CLOSED MESSAGE
-       ===================================================== */
-
-    .project-closed-message {
-        position: absolute;
-
-        top: 135px;
-
-        left: 15px;
-        right: 15px;
-
-        font-size: 14px;
-        line-height: 1.7;
-
-        text-align: center;
-    }
-
-
-    /* =====================================================
-       PROJECT ROWS
-       ===================================================== */
-
-    .project-row {
-        position: absolute;
-
-        left: 10px;
-
-        width: calc(100% - 20px);
-
-        height: 600px;
-
-        margin: 0;
-    }
-
-
-    /* FOUR PROJECT POSITIONS */
-
-    .project-page .hybrid-rush {
-        top: 220px;
-        left: 10px;
-    }
-
-    .project-page .ecoranger {
-        top: 840px;
-        left: 10px;
-    }
-
-    .project-page .gridmancer {
-        top: 1460px;
-        left: 10px;
-    }
-
-    .project-page .mindscape {
-        top: 2080px;
-        left: 10px;
-    }
-
-
-    /* =====================================================
-       PROJECT DESCRIPTION WINDOW
-       ===================================================== */
-
-    .project-page .project-description-window {
-
-        position: absolute;
-
-        left: 0;
-        top: 0;
-
-        width: 100%;
-        height: 370px;
-
-        margin: 0;
-    }
-
-
-    /* =====================================================
-       PROJECT SHOWCASE WINDOW
-       ===================================================== */
-
-    .project-page .project-showcase-window {
-
-        position: absolute;
-
-        left: 0;
-        top: 390px;
-
-        width: 100%;
-        height: 190px;
-
-        margin: 0;
-    }
-
-
-    /* =====================================================
-       PROJECT WINDOW TITLE
-       ===================================================== */
-
-    .project-page .window-title {
-        height: 50px;
-
-        padding: 0 10px;
-
-        font-size: 15px;
-    }
-
-    .project-page .window-controls {
-        gap: 5px;
-    }
-
-    .project-page .window-controls span,
-    .project-page .project-close-window {
-
-        width: 27px;
-        height: 27px;
-
-        font-size: 17px;
-    }
-
-
-    /* =====================================================
-       PROJECT DESCRIPTION
-       ===================================================== */
-
-    .project-page .project-description {
-
-        padding: 20px 15px;
-
-        font-size: 12px;
-
-        line-height: 1.5;
-
-        text-align: left;
-    }
-
-    .project-page .project-description strong {
-
-        margin-bottom: 10px;
-
-        font-size: 17px;
-    }
-
-    .project-page .project-description p {
-
-        margin-bottom: 15px;
-    }
-
-
-    /* =====================================================
-       PROJECT SHOWCASE
-       ===================================================== */
-
-    .project-page .project-showcase {
-
-        padding: 15px 10px;
-    }
-
-
-    /* =====================================================
-       GIF
-       ===================================================== */
-
-    .project-page .gif-placeholder {
-
-        width: calc(100% - 20px);
-        max-width: 265px;
-
-        height: auto;
-
-        aspect-ratio: 265 / 155;
-
-        margin: 0 auto;
-    }
-
-    .project-page .gif-placeholder .GIF {
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-
-
-    /* =====================================================
-       PROJECT LINK
-       ===================================================== */
-
-    .project-page .project-link {
-
-        max-width: 100%;
-
-        margin: 10px auto 0;
-
-        font-size: 14px;
-
-        text-align: center;
-
-        overflow-wrap: anywhere;
-    }
-
-
-    /* =====================================================
-       PROJECT DIAMONDS
-       ===================================================== */
-
-    .project-page .diamond-pattern {
-
-        position: absolute;
-
-        left: 15px;
-        right: 15px;
-        bottom: 20px;
-
-        width: auto;
-        height: 60px;
-
-        overflow: hidden;
-    }
-
-}
